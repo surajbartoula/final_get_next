@@ -42,7 +42,7 @@ char	*after_nl(char *bucket)
 	return (part);
 }
 
-char	*get_line(char *bucket)
+char	*fill_line(char *bucket)
 {
 	int		i;
 	char	*line;
@@ -103,7 +103,7 @@ char	*get_next_line(int fd)
 	bucket = readfrom_file(fd, &read_bytes, bucket, cup);
 	if (!bucket)
 		return (NULL);
-	line = get_line(bucket);
+	line = fill_line(bucket);
 	bucket = after_nl(bucket);
 	return (line);
 }
