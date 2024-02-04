@@ -13,6 +13,10 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4
 # endif
