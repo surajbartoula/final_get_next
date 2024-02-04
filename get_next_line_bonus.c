@@ -89,12 +89,12 @@ char	*readfrom_file(int fd, ssize_t *read_bytes, char *bucket, char *cup)
 
 char	*get_next_line(int fd)
 {
-	static char	*bucket[4096];
+	static char	*bucket[OPEN_MAX];
 	char		*line;
 	char		*cup;
 	ssize_t		read_bytes;
 
-	if (fd < 0 || fd > 4096 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT32_MAX)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT32_MAX)
 		return (NULL);
 	read_bytes = 1;
 	cup = malloc(BUFFER_SIZE + 1);
